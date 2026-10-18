@@ -4,5 +4,5 @@ import { svelte, vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 export default defineConfig({
   plugins: [svelte({ preprocess: vitePreprocess() })],
   clearScreen: false,
-  server: { port: 1420, strictPort: true },
+  server: { port: 1420, strictPort: true, proxy: { '/api': 'http://127.0.0.1:3001' } },
 })
